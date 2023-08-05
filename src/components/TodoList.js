@@ -1,12 +1,12 @@
+/* eslint-disable arrow-parens */
 import './TodoList.scss';
 import TodoListItem from './TodoListItem';
 
-const TodoList = () => (
+const TodoList = ({ todos }) => (
   <div className="TodoList">
-    <TodoListItem />
-    <TodoListItem />
-    <TodoListItem />
+    {todos.map((todo) => (
+      <TodoListItem todo={todo} key={todo.id} />
+    ))}
   </div>
 );
-
 export default TodoList;
